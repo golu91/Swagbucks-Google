@@ -48,7 +48,8 @@ def show_not_on():
                "user-agent": "SwagIQ-Android/34 (okhttp/3.10.0)"
               }
     try:
-        response_data1 = requests.post(url=main_url, headers=headers).json()
+        response_data1 = requests.post(url=main_url, headers=headers).json() 
+        print(response_data1)
     except:
         print("Server response not JSON, retrying...")
         time.sleep(1)
@@ -57,6 +58,7 @@ def show_not_on():
     headers = {"Authorization": f"Bearer {BEARER_TOKEN}",
                "user-agent":"SwagIQ-Android/34 (okhttp/3.10.0)"}
     response_data = requests.post(url=main_url, headers=headers).json()
+    print(response_data)
     if response_data["success"] == False:
         print("Show not on.")
         data = response_data1
